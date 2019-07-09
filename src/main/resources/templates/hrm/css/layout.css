@@ -1,0 +1,21 @@
+.form-block {
+	padding: 30px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.submit-btn {
+	width: 100%;
+}
+
+#mainContent h1, .add-content h1, .modify-content h1 {
+	text-align: center;
+}
+
+.add-content {
+	padding: 30px;
+}
+
+.add-form {
+	width: 500px;
+}

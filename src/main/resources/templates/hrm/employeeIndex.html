@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>人事管理系统</title>
+  <link rel="stylesheet" href="https://heerey525.github.io/layui-v2.4.3/layui-v2.4.4/css/layui.css">
+  <script src="https://heerey525.github.io/layui-v2.4.3/layui-v2.4.4/layui.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/layout.css">
+</head>
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">人事管理系统</div>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="#">
+            <img src="img/brand.png" class="layui-nav-img">
+            <span id="user"></span>
+          </a>
+        </li>
+        <li class="layui-nav-item"><a href="/hr/loginOut" id="logout">注销</a></li>
+      </ul>
+    </div>
+  
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+          <li class="layui-nav-item">
+            <a class="" href="javascript:;">用户管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="userIndex.html">查询用户</a></dd>
+              <dd><a href="userAdd.html">添加用户</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">员工管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="employeeIndex.html">查询员工</a></dd>
+              <dd><a href="employeeAdd.html">添加员工</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">部门管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="deptIndex.html">查询部门</a></dd>
+              <dd><a href="deptAdd.html">添加部门</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">职位管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="jobIndex.html">查询职位</a></dd>
+              <dd><a href="jobAdd.html">添加职位</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="layui-body">
+      <!-- 内容主体区域 -->
+      <div style="padding: 15px;" id="mainContent">
+        <h1 id="useTitle">员工管理</h1><hr>
+        <form class="layui-form" id="searchEmployee">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <input type="text" name="name" placeholder="员工名搜索" autocomplete="off"><br>
+            </div>
+            <div class="layui-inline">
+              <button class="layui-btn submit-btn layui-btn-sm" lay-submit lay-filter="searchBtn"><i class="layui-icon">&#xe615;</i></button>
+            </div>
+          </div>
+        </form>
+        <table class="layui-table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>名字</th>
+              <th>性别</th>
+              <th>家庭住址</th>
+              <th>电话号码</th>
+              <th>邮箱</th>
+              <th>生日</th>
+              <th>学历</th>
+              <th>部门</th>
+              <th>职位</th>
+              <th>薪资/月薪(元)</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="layui-footer">
+      <!-- 底部固定区域 -->
+      © Robin - 人事管理系统
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/layuiUse.js"></script>
+  <script type="text/javascript" src="/js/interceptor.js"></script>
+  <script type="text/javascript" src="/js/afterLogin.js"></script>
+  <script type="text/javascript" src="/js/dataformat.js"></script>
+  <script type="text/javascript" src="/js/employee.js"></script>
+  
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]><![endif]-->
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+</body>
+</html>
